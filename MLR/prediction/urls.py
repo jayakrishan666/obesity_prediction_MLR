@@ -1,7 +1,8 @@
+from django.contrib import admin
 from django.urls import path
-from . import views
+from prediction.views import predict_obesity
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Home page
-    path('predict/', views.predict, name='predict'),  # Prediction endpoint
+    path('admin/', admin.site.urls),
+    path('', predict_obesity, name='predict'),
 ]
